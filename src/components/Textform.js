@@ -5,10 +5,10 @@ import React, {useState  } from 'react'
 
 export default function Textform(props) {
   
-  
+  //React hook that initializes a state variable named text with an initial value of 'Enter your text here '
 const [text, setText] = useState('Enter your text here ');
 // if i want to update the text 
-// text="new text " this is wrong way to update the txt use setText insteed
+// text="new text " this is wrong way to update the txt use setText instead
 // setText("new text using setText");
 
     //create upper case function
@@ -39,6 +39,8 @@ const [text, setText] = useState('Enter your text here ');
     }
     
     //create function on change
+    //jitni bar text from ke ander text add krnge utni bar on change event trigger hoga
+    // It captures the value entered by the user and performs some action with it, such as updating the state or modifying the DOM.
     const handleOnChange=(event)=>{
         console.log("on change");
         //here using event.target.value the value inputed by user append in text value
@@ -73,7 +75,7 @@ const [text, setText] = useState('Enter your text here ');
   backgroundColor: "black"
  })
 
- //button drak mode
+ //button dark== mode
  const [btntext, setbtntext] = useState("Enable dark mode")
 
 
@@ -83,16 +85,16 @@ const [text, setText] = useState('Enter your text here ');
     <>
    <div className='container'> 
       {/* have to add something  */}
-<div className="mb-3">
+  <div className="mb-3">
   <label for="mybox" className="form-label">
 
     <h1>{props.heading}</h1></label>
-  <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="10"></textarea>
+  <textarea className="form-control"   value={text} onChange={handleOnChange} id="mybox" rows="10"></textarea>
   <button className="btn btn-primary my-3 "  onClick={handleUppClick} >convert to upper case</button>
   <button className="btn btn-primary my-3 mx-3"  onClick={handlelowClick} >convert to lower case</button>
   <button className="btn btn-primary my-3 mx-3"  onClick={clear} >clear text</button>
-
-</div>
+   
+  </div>
 
     </div> 
     <div className="container" style={myStyle}>
@@ -109,5 +111,9 @@ const [text, setText] = useState('Enter your text here ');
     </>
     
   )
+}
+
+Textform.defaultProps={
+  heading: "Add heading for text form"
 }
 

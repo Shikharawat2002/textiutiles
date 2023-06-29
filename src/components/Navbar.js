@@ -11,17 +11,20 @@ export default function Navbar(props) {
       {props.title}
     </a>
   </div>
+  <div className="darkmodebtn">
+   
+  </div>
 </nav>
   )
 }
 
 
-// define proptypes for the functon  provide in object
+// define proptypes for the function  provide in object
 Navbar.propTypes = {
   title : PropTypes.string
 }
 
-// have to add compulsary prop value of props and add is required or add defautl props in case nothing is pass
+// have to add compulsary prop value of props and add is required or add default props in case nothing is pass
 
 // Navbar.propTypes = {
 //   title : PropTypes.string.isRequired
